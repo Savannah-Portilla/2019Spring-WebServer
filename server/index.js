@@ -1,8 +1,13 @@
 const express = require('express'); //import express//
-const users = require('./controllers/users'); //
+const path = require('path');
+const users = require('./controllers/users');
+
 const app = express(); //running functionwe imported//
 const port = 3000;
 
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
+app.use(express.static(path.join(__dirname, "../NoFramework"))); 
 app.get('/', (req, res) => res.send('Hello World!')); //app=express, this function sends hello world//
 app.use('/users', users); // /users = mounts to users//
 

@@ -3,7 +3,7 @@ const path = require('path');
 const users = require('./controllers/users');
 
 const app = express(); //running functionwe imported//
-const port = 3000;
+const port = 3001;
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());

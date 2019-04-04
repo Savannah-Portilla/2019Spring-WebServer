@@ -1,25 +1,26 @@
 {
-  "name": "vue2",
-  "version": "0.1.0",
+  "name": "2019springinclass",
+  "version": "1.1.0",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "strat": "nodemon server/index.js --watch server"
+    "start": "nodemon server/index.js --watch server"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Savannah-Portilla/2019Spring-WebServer.git"
+    "url": "git+https://github.com/jewpaltz/2019SpringInClass.git"
   },
-  "license": "ICS",
+  "license": "ISC",
   "dependencies": {
+    "bcrypt": "^3.0.4",
+    "bootstrap": "^4.3.1",
+    "dotenv": "^6.2.0",
     "express": "^4.16.4",
     "mysql": "^2.16.0",
-    "dotenv": "^6.2.0",
     "vue": "^2.6.6",
-    "vue-router": "^3.0.1",
-    "bootstrap": "^4.3.1"
+    "vue-router": "^3.0.1"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.4.0",
@@ -30,7 +31,8 @@
     "eslint-plugin-vue": "^5.0.0",
     "node-sass": "^4.9.0",
     "sass-loader": "^7.1.0",
-    "vue-template-compiler": "^2.5.21"
+    "vue-template-compiler": "^2.5.21",
+    "nodemon": "^1.18.10"
   },
   "eslintConfig": {
     "root": true,

@@ -1,9 +1,9 @@
 <template>
   <div class="row">
     <div class="col">
-      <h1>This is {{name}}'s page. She is {{age}} years ld.</h1>
+      <h1>This is {{name}}'s page. He is {{age}} years old </h1>
       <input v-model="age" type="text" class="form-control" placeholder="Age" />
-      <div class="progress"> 
+      <div class="progress">
         <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" :style="{width: age + '%'}"></div>
       </div>
     </div>
@@ -13,12 +13,11 @@
 <script>
 export default {
     data: ()=> ({
-     name: "Savannah",
-     age: 24
+      name: "Moshe",
+      age: 42
     })
 }
 </script>
 
 <style type="scss">
-
 </style>

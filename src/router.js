@@ -22,6 +22,11 @@ export default new Router({
       component: MyFriends
     },
     {
+      path: '/Register',
+      name: 'register',
+      component: Register
+    },
+    {
       path: '/about',
       name: 'about',
       // route level code-splitting

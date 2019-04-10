@@ -27,6 +27,11 @@ export default new Router({
       component: Register
     },
     {
+      path: '/Login',
+      name: 'login',
+      component: Login
+    },
+    {
       path: '/about',
       name: 'about',
       // route level code-splitting

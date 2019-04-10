@@ -34,6 +34,7 @@ const model = {
         return jwt.verify(token, JWT_SECRET);
     },
     async login(email, password){
+        //console.log({ email, password})
         const data = await conn.query(`SELECT * FROM 2019Spring_Persons P
                         Join 2019Spring_ContactMethods CM On CM.Person_Id = P.id
                     WHERE CM.Value=?`, email);

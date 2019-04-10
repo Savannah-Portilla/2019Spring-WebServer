@@ -48,7 +48,7 @@
       </div>
     </div>
     </div>
-    <div class="col-lg-6">
+     <div class="col-lg-6">
       <div class="card border-success" v-if="newUser">
         <div class="card-body">
           <h4 class="card-title">Congrats! You've Registered</h4>
@@ -58,34 +58,31 @@
         </div>
       </div>
     </div>
-</div>
+    </div>
 </template>
 
 <script>
 import { Globals } from "@/models/api";
 import { Register } from "@/models/users";
-import toastr from 'toastr';
-import 'toastr/build/toastr.css';
 
 export default {
     data: ()=> ({
-        data: {},
+      data: {},
         newUser: null
     }),
     methods: {
-        async submit(){
+      async submit(){
             try {
               const m = await Register(this.data);
               this.newUser = m;
-              toastr.success("You've registered successfully!")
             } catch (error) {
               Globals.errors.push(error);
-              toaster.error(error.msg);
             }
-        }
+      }
     }
 }
 </script>
 
 <style>
+
 </style>

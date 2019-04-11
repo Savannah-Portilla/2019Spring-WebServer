@@ -43,7 +43,7 @@ const model = {
         }
         const x = await bcrypt.compare(password, data[0].Password);
         if(x){
-            const user = { ...data[0], password: null };
+            const user = { ...data[0], password: null }; // no longer send pw hash back to client
             return { user, token: jwt.sign(user, JWT_SECRET) };
         }else{
             throw Error('Wrong Password');
@@ -69,3 +69,6 @@ const model = {
 };
 
 module.exports = model;
+
+// cookies = headers with a twist, browser auto sends headers with requests, only send to the same machine, rellying on the browser
+// for that is dangerous, 

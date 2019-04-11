@@ -19,7 +19,7 @@
         <h4 class="card-title">Login</h4>
         <div class="card-text">
             <form @submit.prevent="submit">
-                <div class="form-group">
+                <div class="form-group"> </div>
                   <label for="FirstName">Email</label>
                   <input type="text" v-model="data.email"
                     class="form-control" name="Email" id="Email" aria-describedby="helpEmail" placeholder="Email">
@@ -69,7 +69,7 @@ export default {
               toastr.success("You've logged in successfully!")
             } catch (error) {
               Globals.errors.push(error);
-              toaster.error(error.msg);
+              toaster.error(error.msg); 
             }
         }
     }

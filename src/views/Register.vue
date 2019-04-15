@@ -33,8 +33,8 @@
                 </div>
                 <div class="form-group">
                   <label for="Password">Password</label>
-                  <input type="password" v-model="data.Password"
-                    class="form-control" name="Password" id="Password" placeholder="Password">
+                  <input type="password" class="form-control" v-model="data.Password"
+                    name="Password" id="Password" placeholder="Password">
                 </div>
                 <div class="form-group">
                   <label for="Birthday">Birthday</label>
@@ -65,7 +65,6 @@
 import { Globals } from "@/models/api";
 import { Register } from "@/models/users";
 import toastr from 'toastr';
-import 'toastr/build/toastr.css';
 
 export default {
     data: ()=> ({
@@ -80,7 +79,7 @@ export default {
               toastr.success("You've registered successfully!")
             } catch (error) {
               Globals.errors.push(error);
-              toastr.error(error.msg);
+              toastr.error(error.message);
             }
       }
     }

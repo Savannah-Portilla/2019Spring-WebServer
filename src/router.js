@@ -3,11 +3,12 @@ import Router from 'vue-router'
 import Home from './views/Home.vue'
 import MyFriends from "./views/MyFriends.vue"
 import Register from "./views/Register.vue"
-import Login from "./views/Login.vue";
+import Login from "./views/Login.vue"
+import { Globals } from "@/models/api.js";
 
 Vue.use(Router)
 
-export default new Router({
+const router = new Router({
   mode: 'history',
   base: process.env.BASE_URL,
   routes: [
@@ -41,3 +42,15 @@ export default new Router({
     }
   ]
 })
+
+router.beforeEach((to, from, next) =>{ // whats inside to? = use console login to find out.
+  console.log({ to, from });
+  const publicRoutes = ['home', 'login', 'register'];
+  if(!publicRoutes.includes( to.name ) && !Globals.user){
+    Globals.redirectRoute = { name: to.name, path: to.path, params: to.params, query: to.query, hash: to.hash }
+    return next('login');
+  }
+  next(); // if you dont call next the server is going to think you are still doing an action
+})
+
+export default Router;

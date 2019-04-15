@@ -17,7 +17,7 @@ const model = {
         return data[0];    
     },
     async add(input){
-        if(!input.Password){
+        if(!input.password){
             throw Error('Password is Required');
         }
         if(input.Password.length < 8){
@@ -36,7 +36,7 @@ const model = {
     async login(email, password){
         //console.log({ email, password})
         const data = await conn.query(`SELECT * FROM 2019Spring_Persons P
-                        Join 2019Spring_ContactMethods CM On CM.Person_Id = P.id
+                        Join 2019Spring_ContactMethods CM On CM.user_id = P.id
                     WHERE CM.Value=?`, email);
         if(data.length == 0){
             throw Error('User Not Found');
@@ -61,7 +61,7 @@ const model = {
             await conn.query(`Update 2019Spring_Persons P
                             Set ?
                         WHERE P.id=?`,[ {Password: hashedPassword }, data[0].id]);
-            return { status: "success", msg: "Password Succesfully Changed" };
+            return { status: "success", message: "Password Succesfully Changed" };
         }else{
             throw Error('Wrong Password');
         }

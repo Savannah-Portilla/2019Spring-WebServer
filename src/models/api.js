@@ -1,5 +1,3 @@
-import { async } from "q";
-
 const API_ROOT = process.env.API_ROOT || "http://localhost:3000/";
 
 export const Globals = {

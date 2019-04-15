@@ -38,11 +38,10 @@ export default {
         Globals: Globals
     }),
     methods: {
-        login(){
-            login();
+
         }
-    }
 }
+
     
 </script>
 

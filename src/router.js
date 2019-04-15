@@ -44,7 +44,7 @@ const router = new Router({
 })
 
 router.beforeEach((to, from, next) =>{ // whats inside to? = use console login to find out.
-  console.log({ to, from });
+  // console.log({ to, from });
   const publicRoutes = ['home', 'login', 'register'];
   if(!publicRoutes.includes( to.name ) && !Globals.user){
     Globals.redirectRoute = { name: to.name, path: to.path, params: to.params, query: to.query, hash: to.hash }

@@ -52,8 +52,7 @@ export default {
         async submit(){
             try {
               const m = await Login(this.data);
-              this.$router.push('Globals.redirectRoute') // push name or path to go there
-              this.newUser = m.user;
+              this.$router.push(Globals.redirectRoute)
               toastr.success("You've logged in successfully!")
             } catch (error) {
               Globals.errors.push(error); // read from app.vue

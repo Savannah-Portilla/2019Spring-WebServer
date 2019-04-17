@@ -4,9 +4,13 @@ import Home from './views/Home.vue'
 import MyFriends from "./views/MyFriends.vue"
 import Register from "./views/Register.vue"
 import Login from "./views/Login.vue"
-import { Globals } from "@/models/api.js";
+import { Globals } from '@/models/api';
 
 Vue.use(Router)
+
+// function gaurd(to, from, next){
+
+// }
 
 const router = new Router({
   mode: 'history',
@@ -43,14 +47,14 @@ const router = new Router({
   ]
 })
 
-router.beforeEach((to, from, next) =>{ // whats inside to? = use console login to find out.
+router.beforeEach((to, from, next)=>{ // whats inside to? = use console login to find out.
   // console.log({ to, from });
   const publicRoutes = ['home', 'login', 'register'];
   if(!publicRoutes.includes( to.name ) && !Globals.user){
-    Globals.redirectRoute = { name: to.name, path: to.path, params: to.params, query: to.query, hash: to.hash }
+    Globals.redirectRoute = { name: to.name, path: to.path, params: to.params, query: to.query, hash: to.hash  }
     return next('login');
   }
   next(); // if you dont call next the server is going to think you are still doing an action
 })
 
-export default Router;
+export default router;
